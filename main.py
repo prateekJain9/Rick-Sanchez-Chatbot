@@ -33,7 +33,7 @@ for message in st.session_state.chat_session.history:
 user_prompt = st.chat_input("Ask Rick anything you want")
 if user_prompt:
     st.chat_message("user").markdown(user_prompt)
-    geminiReply = st.session_state.chat_session.send_message(user_prompt)
+    geminiReply = st.session_state.chat_session.send_message("Answer this as Rick Sanchez from Rick and Morty without any explicit content"+" "+user_prompt)
     with st.chat_message("assistant"):
         st.markdown(geminiReply.text)
 
